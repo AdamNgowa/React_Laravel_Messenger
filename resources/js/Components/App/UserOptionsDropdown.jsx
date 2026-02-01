@@ -6,6 +6,7 @@ import {
     Transition,
 } from "@headlessui/react";
 import axios from "axios";
+import { Fragment } from "react";
 import {
     EllipsisVerticalIcon,
     LockClosedIcon,
@@ -69,7 +70,7 @@ export default function UserOptionsDropdown({ conversation }) {
                                     {({ focus }) => (
                                         <button
                                             onClick={onBlockUser}
-                                            className={`${active ? "bg-black/30 text-white" : "text-gray-100"} group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                                            className={`${focus ? "bg-black/30 text-white" : "text-gray-100"} group flex w-full items-center rounded-md px-2 py-2 text-sm`}
                                         >
                                             {conversation.blocked_at ? (
                                                 <>
@@ -91,7 +92,7 @@ export default function UserOptionsDropdown({ conversation }) {
                                     {({ focus }) => (
                                         <button
                                             onClick={changeUserRole}
-                                            className={`${active ? "bg-black/30 text-white" : "text-gray-100"} group flex items-center rounded-md px-2 py-2 text-sm`}
+                                            className={`${focus ? "bg-black/30 text-white" : "text-gray-100"} group flex items-center rounded-md px-2 py-2 text-sm`}
                                         >
                                             {conversation.is_admin && (
                                                 <>
